@@ -1,0 +1,33 @@
+{
+	"name": "kiosk",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"format": "prettier --write \"./**/*.{js,json}\""
+	},
+	"dependencies": {
+		"@chakra-ui/icons": "^2.0.6",
+		"@chakra-ui/react": "^2.2.6",
+		"@emotion/react": "^11.10.0",
+		"@emotion/styled": "^11.10.0",
+		"@mui/icons-material": "^5.8.4",
+		"@mui/material": "^5.10.0",
+		"framer-motion": "^6.5.1",
+		"fs": "^0.0.1-security",
+		"instascan-umd": "^1.0.1",
+		"next": "12.2.5",
+		"next-pwa": "^5.5.5",
+		"qr-scanner": "^1.4.1",
+		"react": "^18.2.0",
+		"react-dom": "18.2.0",
+		"react-icons": "^4.4.0"
+	},
+	"devDependencies": {
+		"eslint": "8.21.0",
+		"eslint-config-next": "12.2.5",
+		"prettier": "^2.7.1"
+	}
+}
