@@ -19,6 +19,9 @@ Contains the basic `pages/routes` views of the app. Strucutred routing provided 
 ### services
 JavaScript functions, hooks that are to be imported in pages in order to perform some specific tasks. Write your utility functions, custom libraries here.
 
+## API Endpoints Naming
+`HOSTNAME/api/<service_name>/<?res_name>/<endpoint>`
+
 ## Routes
 - `/`
 - `/dashboard`

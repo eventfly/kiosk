@@ -1,31 +1,37 @@
-import BottomNavChakra from "../components/BottomNavChakra";
-
-import { Container } from "@chakra-ui/layout";
-import { useEffect } from "react";
+import SideNavBar from "../components/SideNavBar";
+import Footer from "../components/Footer";
 
 import { isAuthenticated } from "../services/StorageService";
-
+import { useEffect, useState } from "react";
 
 
 function DefaultLayout({ children })
 {
+    const [ authenticated, setAuthenticated ] = useState(false);
+
     useEffect(() => {
+        setAuthenticated(isAuthenticated());
+        console.log("isauth", isAuthenticated());
     }, []);
 
-    if (isAuthenticated()) {
+    if (authenticated)
+    {
         return (
-            <Container>
-                {children}
-                <BottomNavChakra />
-            </Container>
-        );    
+            <>
+                <SideNavBar>   
+                    {children}
+                </SideNavBar>
+                <Footer/>    
+            </>
+        );
     }
-    else {
+    else
+    {
         return (
-            <Container>
+            <>
                 { children }
-            </Container>
-        )
+            </>
+        );
     }
 }
 

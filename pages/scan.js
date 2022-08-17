@@ -1,17 +1,19 @@
-/*
-    This page is for scanning QR code through the PWA
-*/
-
+import {
+	Container,
+	Stack,
+	Heading,
+	Box
+} from "@chakra-ui/react";
 import QrScanner from "qr-scanner";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 
-function ScanQRView() {
 
+
+function ScanQRView()
+{
     var router = useRouter();
     var decodedValue = "";
-    var isDecoded = false;
-
 
     //  useEffect because we want to run it during Client side
     useEffect(() => {
@@ -20,7 +22,6 @@ function ScanQRView() {
         var qrScanner = new QrScanner(video, result => {
             console.log(result);
             decodedValue = result;
-            isDecoded = true;
     
             //  Visit the output from the QR code
             router.push(result);
@@ -33,6 +34,7 @@ function ScanQRView() {
             {
                 video.srcObject = stream;
                 qrScanner.start();
+
                 //  the JavaScript equivalent of sleep
                 new Promise(r => setTimeout(r, 200)).then(() => {
                     qrScanner.stop();
@@ -41,17 +43,22 @@ function ScanQRView() {
             .catch (function (error)
             {
                 console.log("Something went wrong!");
+                console.log(error);
             });
         }
     });
 
     return (
-        <div>
-            <h1>QR Code Scanner</h1>
-            <br />
-            <video id="preview"></video>
-            <h2>{decodedValue}</h2>
-        </div>
+        <Container>
+            <Stack>
+                <Heading textAlign={"center"} marginTop={"10px"} fontSize={'3xl'}>
+                    Scan QR
+                </Heading>
+                <Box bgColor={"black"} height={"md"} width={"100%"}>
+                    <video id="preview" height={"inherit"} width={"inherit"}></video>
+                </Box>
+            </Stack>
+        </Container>
     );
 }
 
