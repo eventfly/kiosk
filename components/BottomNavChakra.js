@@ -16,11 +16,11 @@ function BottomNavChakra() {
                     </Box>
 
                     </Link>
-                    <Link href="/feed">
+                    <Link href="/dashboard">
                     <Box padding={5} textAlign='center'>
                         <PlusSquareIcon w={6} h={6} />
                         <br />
-                        <Text fontSize={'sm'}>Feed
+                        <Text fontSize={'sm'}>Dashboard
                         </Text>
                     </Box>
                     </Link>

@@ -1,23 +1,18 @@
-import BottomNav from "../components/BottomNav";
 import BottomNavChakra from "../components/BottomNavChakra";
 
-import Box from "@mui/material/Box";
-// import { Container } from "@mui/system";
 import { Container } from "@chakra-ui/layout";
 import { useEffect } from "react";
 
+import { isAuthenticated } from "../services/StorageService";
 
-function DefaultLayout({ children }) {
 
-    var authenticated = false;
 
+function DefaultLayout({ children })
+{
     useEffect(() => {
-        if ("auth_key" in localStorage) {
-            authenticated = true;
-        }
-    })
+    }, []);
 
-    if (authenticated) {
+    if (isAuthenticated()) {
         return (
             <Container>
                 {children}
