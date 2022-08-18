@@ -24,7 +24,8 @@ function ScanQRView()
             decodedValue = result;
     
             //  Visit the output from the QR code
-            router.push(result);
+            const ticketUrl = `/info/${result}`;
+            router.push(ticketUrl);
         });
 
         if (navigator.mediaDevices.getUserMedia)

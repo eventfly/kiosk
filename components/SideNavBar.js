@@ -34,17 +34,17 @@ import { getData_Local } from "../services/StorageService";
 const LinkItems = [
   {
     name: "Scan",
-    link: "scan",
+    link: "/scan",
     icon: FiLock
   },
   {
     name: "Info",
-    link: "info",
+    link: "/info",
     icon: FiInfo
   },
   {
     name: "Signout",
-    link: "signout",
+    link: "/signout",
     icon: FiEyeOff
   }
 ];
@@ -132,7 +132,7 @@ const SidebarContent = ({ onClose, ...rest }) =>
 const NavItem = ({ icon, children, ...rest }) =>
 {
   return (
-    <Link href="#" style={{ textDecoration: 'none' }} _focus={{ boxShadow: 'none' }}>
+    <Link href="" style={{ textDecoration: 'none' }} _focus={{ boxShadow: 'none' }}>
       <Flex
         align="center"
         p="4"
