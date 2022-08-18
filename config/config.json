@@ -3,6 +3,7 @@
         "ORG": "http://localhost:3001",
         "AUTH": "http://localhost:3000",
         "EVENT": "http://localhost:3002",
-        "NEWSFEED": ""
+        "NEWSFEED": "http://localhost:3003",
+        "PARTICIPANT": "http://localhost:3004"
     }
 }
